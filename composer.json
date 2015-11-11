@@ -1,0 +1,10 @@
+{
+    "name": "dangreencorn/mastercard-api-php",
+    "authors": [
+        {
+            "name": "Dan Greencorn",
+            "email": "dan@dangreencorn.ca"
+        }
+    ],
+    "require": {}
+}
