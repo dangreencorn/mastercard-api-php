@@ -1,17 +1,19 @@
 <?php
 
-require_once('../../../services/location/domain/options/atms/AtmLocationRequestOptions.php');
-require_once('../../../services/location/domain/atms/atms/Address.class.php');
-require_once('../../../services/location/domain/atms/atms/Atm.class.php');
-require_once('../../../services/location/domain/atms/atms/Atms.class.php');
-require_once('../../../services/location/domain/atms/atms/Country.class.php');
-require_once('../../../services/location/domain/atms/atms/CountrySubdivision.class.php');
-require_once('../../../services/location/domain/atms/atms/Location.class.php');
-require_once('../../../services/location/domain/atms/atms/Point.class.php');
-require_once('../../../common/Connector.php');
-require_once('../../../common/Environment.php');
-require_once('../../../common/Serializer.php');
-require_once('../../../common/URLUtil.php');
+namespace Mastercard\services\location\atms;
+
+use \Mastercard\services\location\domain\options\atms\AtmLocationRequestOptions;
+use \Mastercard\services\location\domain\atms\atms\Address;
+use \Mastercard\services\location\domain\atms\atms\Atm;
+use \Mastercard\services\location\domain\atms\atms\Atms;
+use \Mastercard\services\location\domain\atms\atms\Country;
+use \Mastercard\services\location\domain\atms\atms\CountrySubdivision;
+use \Mastercard\services\location\domain\atms\atms\Location;
+use \Mastercard\services\location\domain\atms\atms\Point;
+use \Mastercard\common\Connector;
+use \Mastercard\common\Environment;
+use \Mastercard\common\Serializer;
+use \Mastercard\common\URLUtil;
 
 class AtmLocationService extends Connector{
 

@@ -1,5 +1,7 @@
 <?php
 
+namespace Mastercard\services\location\domain\options\merchants;
+
 class Details {
     const ACCEPTANCE_PAYPASS = "acceptance.paypass";
     const TOPUP_REPOWER = "topup.repower";

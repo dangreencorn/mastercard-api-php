@@ -1,5 +1,7 @@
 <?php
 
+namespace Mastercard\services\Match\domain;
+
 class DriversLicenseType {
     private $number;
     private $countySubdivision;

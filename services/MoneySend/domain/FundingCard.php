@@ -1,4 +1,7 @@
 <?php
+
+namespace Mastercard\services\MoneySend\domain;
+
 class FundingCard {
 
     private $AccountNumber;

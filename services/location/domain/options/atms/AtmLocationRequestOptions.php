@@ -1,5 +1,7 @@
 <?php
 
+namespace Mastercard\services\location\domain\options\atms;
+
 class AtmLocationRequestOptions {
     private $pageOffset;
     private $pageLength;

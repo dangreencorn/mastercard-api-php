@@ -1,5 +1,7 @@
 <?php
 
+namespace Mastercard\services\Match\domain\options;
+
 class TerminationInquiryHistoryOptions {
     private $pageOffset;
     private $pageLength;

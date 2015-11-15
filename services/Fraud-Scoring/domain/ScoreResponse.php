@@ -1,5 +1,7 @@
 <?php
 
+namespace Mastercard\services\Fraud-Scoring\domain;
+
 class ScoreResponse
 {
 	private $MatchIndicator;

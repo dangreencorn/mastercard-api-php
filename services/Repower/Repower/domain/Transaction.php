@@ -1,5 +1,7 @@
 <?php
 
+namespace Mastercard\services\Repower\Repower\domain;
+
 class Transaction
 {
 	private $Type;

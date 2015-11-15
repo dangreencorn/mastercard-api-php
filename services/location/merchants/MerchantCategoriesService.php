@@ -1,9 +1,11 @@
 <?php
 
-require_once('../../../services/location/domain/categories/Categories.class.php');
-require_once('../../../common/Connector.php');
-require_once('../../../common/Environment.php');
-require_once('../../../common/Serializer.php');
+namespace Mastercard\services\location\merchants;
+
+use \Mastercard\services\location\domain\categories\Categories;
+use \Mastercard\common\Connector;
+use \Mastercard\common\Environment;
+use \Mastercard\common\Serializer;
 
 class MerchantCategoriesService extends Connector {
     private $environment;

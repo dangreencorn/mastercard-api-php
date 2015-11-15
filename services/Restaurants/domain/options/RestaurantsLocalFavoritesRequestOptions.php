@@ -1,5 +1,7 @@
 <?php
 
+namespace Mastercard\services\Restaurants\domain\options;
+
 class RestaurantsLocalFavoritesRequestOptions {
     private $pageOffset;
     private $pageLength;

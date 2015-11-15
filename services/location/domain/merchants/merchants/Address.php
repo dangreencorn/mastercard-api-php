@@ -1,5 +1,7 @@
 <?php
 
+namespace Mastercard\services\location\domain\merchants\merchants;
+
 class Address
 {
 	private $Line1;

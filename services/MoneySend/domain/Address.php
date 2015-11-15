@@ -1,5 +1,7 @@
 <?php
 
+namespace Mastercard\services\MoneySend\domain;
+
 class Address
 {
 	private $Line1;

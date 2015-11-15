@@ -1,5 +1,7 @@
 <?php
 
+namespace Mastercard\services\Repower\Repower\domain;
+
 class Repower
 {
 	private $RequestId;

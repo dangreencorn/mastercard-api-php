@@ -1,5 +1,7 @@
 <?php
 
+namespace Mastercard\services\location\domain\atms\atms;
+
 class Location
 {
 	private $Name;
@@ -7,6 +9,7 @@ class Location
 	private $DistanceUnit;
 	private $Address;
 	private $Point;
+	private $LocationType;
 
 	function getName(){
 		return $this->Name;
@@ -23,6 +26,9 @@ class Location
 	function getPoint(){
 		return $this->Point;
 	}
+	function getLocationType(){
+		return $this->LocationType;
+	}
 
 	function setName($value){
 		return $this->Name = $value;
@@ -38,6 +44,9 @@ class Location
 	}
 	function setPoint($value){
 		return $this->Point = $value;
+	}
+	function setLocationType($value){
+		return $this->LocationType = $value;
 	}
 
 	function hasAttribute($attributeName){

@@ -1,7 +1,6 @@
 <?php
 
-include_once("TransactionAmount.php");
-include_once("CardAcceptor.php");
+namespace Mastercard\services\Repower\Repower\domain;
 
 class RepowerRequest
 {

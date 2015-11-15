@@ -1,5 +1,7 @@
 <?php
 
+namespace Mastercard\services\Repower\Repower\domain;
+
 class TransactionHistory
 {
 	private $Transaction;

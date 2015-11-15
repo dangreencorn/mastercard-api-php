@@ -6,5 +6,10 @@
             "email": "dan@dangreencorn.ca"
         }
     ],
+    "autoload": {
+    	"psr-4": {
+    		"Mastercard\\": "./"
+        }
+    },
     "require": {}
 }

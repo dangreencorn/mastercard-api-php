@@ -1,9 +1,11 @@
 <?php
 
-require_once('../../common/Connector.php');
-require_once('../../common/Environment.php');
-require_once('../../common/Serializer.php');
-require_once('../../common/URLUtil.php');
+namespace Mastercard\services\Match;
+
+use \Mastercard\common\Connector;
+use \Mastercard\common\Environment;
+use \Mastercard\common\Serializer;
+use \Mastercard\common\URLUtil;
 
 class TerminationInquiryService extends Connector {
     private $environment;

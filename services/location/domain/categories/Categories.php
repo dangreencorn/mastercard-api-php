@@ -1,5 +1,7 @@
 <?php
 
+namespace Mastercard\services\location\domain\categories;
+
 class Categories
 {
 	private $Category;

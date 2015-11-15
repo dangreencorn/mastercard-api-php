@@ -1,12 +1,14 @@
 <?php
 
-require_once('../../../services/location/domain/options/merchants/CountryMerchantLocationRequestOptions.php');
-require_once('../../../services/location/domain/common/countries/Countries.class.php');
-require_once('../../../services/location/domain/common/countries/Country.class.php');
-require_once('../../../common/Connector.php');
-require_once('../../../common/Environment.php');
-require_once('../../../common/Serializer.php');
-require_once('../../../common/URLUtil.php');
+namespace Mastercard\services\location\merchants;
+
+use \Mastercard\services\location\domain\options\merchants\CountryMerchantLocationRequestOptions;
+use \Mastercard\services\location\domain\common\countries\Countries;
+use \Mastercard\services\location\domain\common\countries\Country;
+use \Mastercard\common\Connector;
+use \Mastercard\common\Environment;
+use \Mastercard\common\Serializer;
+use \Mastercard\common\URLUtil;
 
 class CountryMerchantLocationService extends Connector {
 

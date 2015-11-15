@@ -1,9 +1,12 @@
 <?php
 
+namespace Mastercard\services\location\domain\common\countries;
+
 class Country
 {
 	private $Name;
 	private $Code;
+	private $GeoCoding;
 
 	function getName(){
 		return $this->Name;
@@ -11,12 +14,18 @@ class Country
 	function getCode(){
 		return $this->Code;
 	}
+	function getGeoCoding(){
+		return $this->GeoCoding;
+	}
 
 	function setName($value){
 		return $this->Name = $value;
 	}
 	function setCode($value){
 		return $this->Code = $value;
+	}
+	function setGeoCoding($value){
+		return $this->GeoCoding = $value;
 	}
 
 	function hasAttribute($attributeName){

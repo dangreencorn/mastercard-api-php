@@ -1,4 +1,7 @@
 <?php
+
+namespace Mastercard\services\Lost-Stolen\domain;
+
 class Account {
     private $status;
     private $listed;

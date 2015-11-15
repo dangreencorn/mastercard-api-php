@@ -1,5 +1,7 @@
 <?php
 
+namespace Mastercard\services\Match\domain;
+
 class TerminatedMerchantType {
     private $terminationReasonCode;
     private $merchant;

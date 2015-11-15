@@ -1,8 +1,10 @@
 <?php
 
-require_once('../../common/Connector.php');
-require_once('../../common/Environment.php');
-require_once('../../common/Serializer.php');
+namespace Mastercard\services\Lost-Stolen;
+
+use \Mastercard\common\Connector;
+use \Mastercard\common\Environment;
+use \Mastercard\common\Serializer;
 
 class LostStolenService extends Connector{
 	private $environment;

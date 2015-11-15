@@ -1,5 +1,7 @@
 <?php
 
+namespace Mastercard\services\Restaurants\domain\restaurant;
+
 class Location
 {
 	private $Name;

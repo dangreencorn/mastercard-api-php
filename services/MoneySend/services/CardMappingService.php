@@ -1,22 +1,24 @@
 <?php
 
-include_once dirname(__FILE__) . '/../../../common/Connector.php';
-include_once dirname(__FILE__) . '/../../../common/Environment.php';
-include_once dirname(__FILE__) . '/../../../common/Serializer.php';
-include_once dirname(__FILE__) . '/../domain/Mapping.php';
-include_once dirname(__FILE__) . '/../domain/CreateMapping.php';
-include_once dirname(__FILE__) . '/../domain/CreateMappingRequest.php';
-include_once dirname(__FILE__) . '/../domain/InquireMappingRequest.php';
-include_once dirname(__FILE__) . '/../domain/InquireMapping.php';
-include_once dirname(__FILE__) . '/../domain/Mappings.php';
-include_once dirname(__FILE__) . '/../domain/Mapping.php';
-include_once dirname(__FILE__) . '/../domain/ReceivingEligibility.php';
-include_once dirname(__FILE__) . '/../domain/CardholderFullName.php';
-include_once dirname(__FILE__) . '/../domain/Address.php';
-include_once dirname(__FILE__) . '/../domain/Currency.php';
-include_once dirname(__FILE__) . '/../domain/Country.php';
-include_once dirname(__FILE__) . '/../domain/Brand.php';
-include_once dirname(__FILE__) . '/../domain/UpdateMapping.php';
+namespace Mastercard\services\MoneySend\services;
+
+use \Mastercard\common\Connector;
+use \Mastercard\common\Environment;
+use \Mastercard\common\Serializer;
+use ..\domain\Mapping;
+use ..\domain\CreateMapping;
+use ..\domain\CreateMappingRequest;
+use ..\domain\InquireMappingRequest;
+use ..\domain\InquireMapping;
+use ..\domain\Mappings;
+use ..\domain\Mapping;
+use ..\domain\ReceivingEligibility;
+use ..\domain\CardholderFullName;
+use ..\domain\Address;
+use ..\domain\Currency;
+use ..\domain\Country;
+use ..\domain\Brand;
+use ..\domain\UpdateMapping;
 
 class CardMappingService extends Connector {
     private $environment;

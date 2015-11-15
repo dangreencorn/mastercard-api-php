@@ -1,13 +1,15 @@
 <?php
 
-include_once dirname(__FILE__) . '/../../../common/Connector.php';
-include_once dirname(__FILE__) . '/../../../common/Environment.php';
-include_once dirname(__FILE__) . '/../../../common/Serializer.php';
-include_once dirname(__FILE__) . '/../domain/TransferReversal.php';
-include_once dirname(__FILE__) . '/../domain/TransferReversalRequest.php';
-include_once dirname(__FILE__) . '/../domain/TransactionHistory.php';
-include_once dirname(__FILE__) . '/../domain/Transaction.php';
-include_once dirname(__FILE__) . '/../domain/Response.php';
+namespace Mastercard\services\MoneySend\services;
+
+use \Mastercard\common\Connector;
+use \Mastercard\common\Environment;
+use \Mastercard\common\Serializer;
+use ..\domain\TransferReversal;
+use ..\domain\TransferReversalRequest;
+use ..\domain\TransactionHistory;
+use ..\domain\Transaction;
+use ..\domain\Response;
 
 class TransferReversalService extends Connector {
     private $environment;

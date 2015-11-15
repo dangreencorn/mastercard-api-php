@@ -1,17 +1,19 @@
 <?php
 
-include_once dirname(__FILE__) . '/../../../services/restaurants/domain/options/RestaurantsLocalFavoritesRequestOptions.php';
-include_once dirname(__FILE__) . '/../../../services/restaurants/domain/restaurant/Address.php';
-include_once dirname(__FILE__) . '/../../../services/restaurants/domain/countries/Country.php';
-include_once dirname(__FILE__) . '/../../../services/restaurants/domain/country_subdivisions/CountrySubdivision.php';
-include_once dirname(__FILE__) . '/../../../services/restaurants/domain/restaurant/Location.php';
-include_once dirname(__FILE__) . '/../../../services/restaurants/domain/restaurant/Point.php';
-include_once dirname(__FILE__) . '/../../../services/restaurants/domain/restaurant/Restaurants.php';
-include_once dirname(__FILE__) . '/../../../services/restaurants/domain/restaurant/Restaurant.php';
-include_once dirname(__FILE__) . '/../../../common/Connector.php';
-include_once dirname(__FILE__) . '/../../../common/Environment.php';
-include_once dirname(__FILE__) . '/../../../common/Serializer.php';
-include_once dirname(__FILE__) . '/../../../common/URLUtil.php';
+namespace Mastercard\services\Restaurants\services;
+
+use ..\domain\options\RestaurantsLocalFavoritesRequestOptions;
+use ..\domain\restaurant\Address;
+use ..\domain\countries\Country;
+use ..\domain\country_subdivisions\CountrySubdivision;
+use ..\domain\restaurant\Location;
+use ..\domain\restaurant\Point;
+use ..\domain\restaurant\Restaurants;
+use ..\domain\restaurant\Restaurant;
+use \Mastercard\common\Connector;
+use \Mastercard\common\Environment;
+use \Mastercard\common\Serializer;
+use \Mastercard\common\URLUtil;
 
 class RestaurantsLocalFavoritesService extends Connector{
 

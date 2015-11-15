@@ -1,5 +1,7 @@
 <?php
 
+namespace Mastercard\services\location\domain\common\countries;
+
 class Countries
 {
 	private $Country;

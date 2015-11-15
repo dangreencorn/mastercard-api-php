@@ -1,4 +1,7 @@
 <?php
+
+namespace Mastercard\services\MoneySend\domain;
+
 class Brand {
 
     private $AcceptanceBrandCode;

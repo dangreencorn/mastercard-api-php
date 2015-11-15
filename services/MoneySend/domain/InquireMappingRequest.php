@@ -1,4 +1,7 @@
 <?php
+
+namespace Mastercard\services\MoneySend\domain;
+
 class InquireMappingRequest {
 
     private $SubscriberId;

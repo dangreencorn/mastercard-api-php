@@ -1,5 +1,7 @@
 <?php
 
+namespace Mastercard\common;
+
 class Connector
 {
 	const AMP =  "&";

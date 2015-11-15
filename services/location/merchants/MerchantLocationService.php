@@ -1,19 +1,21 @@
 <?php
 
-require_once('../../../services/location/domain/options/merchants/MerchantLocationRequestOptions.php');
-require_once('../../../services/location/domain/merchants/merchants/Acceptance.class.php');
-require_once('../../../services/location/domain/merchants/merchants/Address.class.php');
-require_once('../../../services/location/domain/merchants/merchants/Country.class.php');
-require_once('../../../services/location/domain/merchants/merchants/CountrySubdivision.class.php');
-require_once('../../../services/location/domain/merchants/merchants/Features.class.php');
-require_once('../../../services/location/domain/merchants/merchants/Location.class.php');
-require_once('../../../services/location/domain/merchants/merchants/Merchants.class.php');
-require_once('../../../services/location/domain/merchants/merchants/Merchant.class.php');
-require_once('../../../services/location/domain/merchants/merchants/Point.class.php');
-require_once('../../../common/Connector.php');
-require_once('../../../common/Environment.php');
-require_once('../../../common/Serializer.php');
-require_once('../../../common/URLUtil.php');
+namespace Mastercard\services\location\merchants;
+
+use \Mastercard\services\location\domain\options\merchants\MerchantLocationRequestOptions;
+use \Mastercard\services\location\domain\merchants\merchants\Acceptance;
+use \Mastercard\services\location\domain\merchants\merchants\Address;
+use \Mastercard\services\location\domain\merchants\merchants\Country;
+use \Mastercard\services\location\domain\merchants\merchants\CountrySubdivision;
+use \Mastercard\services\location\domain\merchants\merchants\Features;
+use \Mastercard\services\location\domain\merchants\merchants\Location;
+use \Mastercard\services\location\domain\merchants\merchants\Merchants;
+use \Mastercard\services\location\domain\merchants\merchants\Merchant;
+use \Mastercard\services\location\domain\merchants\merchants\Point;
+use \Mastercard\common\Connector;
+use \Mastercard\common\Environment;
+use \Mastercard\common\Serializer;
+use \Mastercard\common\URLUtil;
 
 class MerchantLocationService extends Connector {
 

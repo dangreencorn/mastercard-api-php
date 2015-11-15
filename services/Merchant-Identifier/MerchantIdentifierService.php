@@ -1,16 +1,18 @@
 <?php
 
-require_once('../../services/Merchant-Identifier/domain/MerchantIdentifierRequestOptions.php');
-require_once('../../services/Merchant-Identifier/domain/MerchantIds.class.php');
-require_once('../../services/Merchant-Identifier/domain/Merchant.class.php');
-require_once('../../services/Merchant-Identifier/domain/Address.class.php');
-require_once('../../services/Merchant-Identifier/domain/Country.class.php');
-require_once('../../services/Merchant-Identifier/domain/CountrySubdivision.class.php');
-require_once('../../services/Merchant-Identifier/domain/ReturnedMerchants.class.php');
-require_once('../../common/Connector.php');
-require_once('../../common/Environment.php');
-require_once('../../common/Serializer.php');
-require_once('../../common/URLUtil.php');
+namespace Mastercard\services\Merchant-Identifier;
+
+use domain/MerchantIdentifierRequestOptions;
+use domain/MerchantIds;
+use domain/Merchant;
+use domain/Address;
+use domain/Country;
+use domain/CountrySubdivision;
+use domain/ReturnedMerchants;
+use \Mastercard\common\Connector;
+use \Mastercard\common\Environment;
+use \Mastercard\common\Serializer;
+use \Mastercard\common\URLUtil;
 
 
 class MerchantIdentifierService extends Connector {

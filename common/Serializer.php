@@ -1,4 +1,7 @@
 <?php
+
+namespace Mastercard\common;
+
 class Serializer
 {
 	private static $Data;

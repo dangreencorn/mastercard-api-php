@@ -1,10 +1,12 @@
 <?php
 
-include_once dirname(__FILE__) . '/../../../common/Connector.php';
-include_once dirname(__FILE__) . '/../../../common/Environment.php';
-include_once dirname(__FILE__) . '/../../../common/Serializer.php';
-include_once dirname(__FILE__) . '/../domain/DeleteSubscriberId.php';
-include_once dirname(__FILE__) . '/../domain/DeleteSubscriberIdRequest.php';
+namespace Mastercard\services\MoneySend\services;
+
+use \Mastercard\common\Connector;
+use \Mastercard\common\Environment;
+use \Mastercard\common\Serializer;
+use ..\domain\DeleteSubscriberId;
+use ..\domain\DeleteSubscriberIdRequest;
 
 class DeleteSubscriberIdService extends Connector {
     private $environment;

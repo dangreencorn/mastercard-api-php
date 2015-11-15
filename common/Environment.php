@@ -1,5 +1,7 @@
 <?php
 
+namespace Mastercard\common;
+
 /**
  *This enumeration defines the status values available for a submitted transaction.
  */

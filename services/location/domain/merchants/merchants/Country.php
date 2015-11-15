@@ -1,6 +1,8 @@
 <?php
 
-class CountrySubdivision
+namespace Mastercard\services\location\domain\merchants\merchants;
+
+class Country
 {
 	private $Name;
 	private $Code;

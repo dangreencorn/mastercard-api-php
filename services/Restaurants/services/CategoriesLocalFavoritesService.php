@@ -1,9 +1,11 @@
 <?php
 
-include_once dirname(__FILE__) . '/../../../services/restaurants/domain/categories/Categories.php';
-include_once dirname(__FILE__) . '/../../../common/Connector.php';
-include_once dirname(__FILE__) . '/../../../common/Environment.php';
-include_once dirname(__FILE__) . '/../../../common/Serializer.php';
+namespace Mastercard\services\Restaurants\services;
+
+use ..\domain\categories\Categories;
+use \Mastercard\common\Connector;
+use \Mastercard\common\Environment;
+use \Mastercard\common\Serializer;
 
 class CategoriesLocalFavoritesService extends Connector {
     private $environment;

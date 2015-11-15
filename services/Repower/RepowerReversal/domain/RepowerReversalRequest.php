@@ -1,5 +1,7 @@
 <?php
 
+namespace Mastercard\services\Repower\RepowerReversal\domain;
+
 class RepowerReversalRequest
 {
 	private $ICA;

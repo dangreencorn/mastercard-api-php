@@ -1,10 +1,12 @@
 <?php
 
-class Atms
+namespace Mastercard\services\location\domain\merchants\merchants;
+
+class Merchants
 {
 	private $PageOffset;
 	private $TotalCount;
-	private $Atm;
+	private $Merchant;
 
 	function getPageOffset(){
 		return $this->PageOffset;
@@ -12,8 +14,8 @@ class Atms
 	function getTotalCount(){
 		return $this->TotalCount;
 	}
-	function getAtm(){
-		return $this->Atm;
+	function getMerchant(){
+		return $this->Merchant;
 	}
 
 	function setPageOffset($value){
@@ -22,8 +24,8 @@ class Atms
 	function setTotalCount($value){
 		return $this->TotalCount = $value;
 	}
-	function setAtm($value){
-		return $this->Atm = $value;
+	function setMerchant($value){
+		return $this->Merchant = $value;
 	}
 
 	function hasAttribute($attributeName){

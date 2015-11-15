@@ -1,8 +1,12 @@
 <?php
 
-require_once('../../common/Connector.php');
-require_once('../../common/Environment.php');
-require_once('../../common/Serializer.php');
+
+
+namespace Mastercard\services\Fraud-Scoring;
+
+use \Mastercard\common\Connector;
+use \Mastercard\common\Environment;
+use \Mastercard\common\Serializer;
 
 class FraudScoringService extends Connector {
     private $environment;

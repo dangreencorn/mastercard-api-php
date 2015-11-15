@@ -1,5 +1,7 @@
 <?php
 
+namespace Mastercard\services\location\domain\options\merchants;
+
 class CountrySubdivisionMerchantLocationRequestOptions {
 
     private $details;

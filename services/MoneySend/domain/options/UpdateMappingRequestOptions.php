@@ -1,4 +1,7 @@
 <?php
+
+namespace Mastercard\services\MoneySend\domain\options;
+
 class UpdateMappingRequestOptions {
 
     private $MappingId;

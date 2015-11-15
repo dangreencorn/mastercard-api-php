@@ -1,13 +1,15 @@
 <?php
 
-include_once dirname(__FILE__) . '/../../../common/Connector.php';
-include_once dirname(__FILE__) . '/../../../common/Environment.php';
-include_once dirname(__FILE__) . '/../../../common/Serializer.php';
-include_once dirname(__FILE__) . '/../domain/SendingEligibility.php';
-include_once dirname(__FILE__) . '/../domain/ReceivingEligibility.php';
-include_once dirname(__FILE__) . '/../domain/Currency.php';
-include_once dirname(__FILE__) . '/../domain/Brand.php';
-include_once dirname(__FILE__) . '/../domain/Country.php';
+namespace Mastercard\services\MoneySend\services;
+
+use \Mastercard\common\Connector;
+use \Mastercard\common\Environment;
+use \Mastercard\common\Serializer;
+use ..\domain\SendingEligibility;
+use ..\domain\ReceivingEligibility;
+use ..\domain\Currency;
+use ..\domain\Brand;
+use ..\domain\Country;
 
 class PanEligibilityService extends Connector {
     private $environment;

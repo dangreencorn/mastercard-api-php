@@ -1,4 +1,7 @@
 <?php
+
+namespace Mastercard\services\MoneySend\domain;
+
 class DeleteSubscriberId {
 
     private $RequestId;

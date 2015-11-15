@@ -1,4 +1,6 @@
 <?php
+
+namespace Mastercard\services\Merchant-Identifier\domain;
 /**
  * Created by PhpStorm.
  * User: TVC0725

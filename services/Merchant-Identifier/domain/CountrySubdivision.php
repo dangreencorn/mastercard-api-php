@@ -1,6 +1,8 @@
 <?php
 
-class Country
+namespace Mastercard\services\Merchant-Identifier\domain;
+
+class CountrySubdivision
 {
 	private $Name;
 	private $Code;

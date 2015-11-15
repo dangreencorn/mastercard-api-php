@@ -1,5 +1,7 @@
 <?php
 
+namespace Mastercard\services\Match\domain;
+
 class PrincipalType {
     private $firstName;
     private $lastName;

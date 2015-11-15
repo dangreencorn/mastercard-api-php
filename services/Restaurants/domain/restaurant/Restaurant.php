@@ -1,5 +1,7 @@
 <?php
 
+namespace Mastercard\services\Restaurants\domain\restaurant;
+
 class Restaurant
 {
 	private $Id;

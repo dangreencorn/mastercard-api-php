@@ -1,5 +1,7 @@
 <?php
 
+namespace Mastercard\services\Match\domain;
+
 class MerchantMatchType {
     private $name;
     private $doingBusinessAsName;

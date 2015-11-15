@@ -1,12 +1,14 @@
 <?php
 
-include_once dirname(__FILE__) . '/../../../services/restaurants/domain/options/CountrySubdivisionsLocalFavoritesRequestOptions.php';
-include_once dirname(__FILE__) . '/../../../services/restaurants/domain/country_subdivisions/CountrySubdivisions.php';
-include_once dirname(__FILE__) . '/../../../services/restaurants/domain/country_subdivisions/CountrySubdivision.php';
-include_once dirname(__FILE__) . '/../../../common/Connector.php';
-include_once dirname(__FILE__) . '/../../../common/Environment.php';
-include_once dirname(__FILE__) . '/../../../common/Serializer.php';
-include_once dirname(__FILE__) . '/../../../common/URLUtil.php';
+namespace Mastercard\services\Restaurants\services;
+
+use ..\domain\options\CountrySubdivisionsLocalFavoritesRequestOptions;
+use ..\domain\country_subdivisions\CountrySubdivisions;
+use ..\domain\country_subdivisions\CountrySubdivision;
+use \Mastercard\common\Connector;
+use \Mastercard\common\Environment;
+use \Mastercard\common\Serializer;
+use \Mastercard\common\URLUtil;
 
 class CountrySubdivisionsLocalFavoritesService extends Connector {
 

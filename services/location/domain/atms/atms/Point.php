@@ -1,5 +1,7 @@
 <?php
 
+namespace Mastercard\services\location\domain\atms\atms;
+
 class Point
 {
 	private $Latitude;

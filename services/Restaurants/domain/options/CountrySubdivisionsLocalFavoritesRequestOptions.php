@@ -1,5 +1,7 @@
 <?php
 
+namespace Mastercard\services\Restaurants\domain\options;
+
 class CountrySubdivisionsLocalFavoritesRequestOptions {
 
     private $country;

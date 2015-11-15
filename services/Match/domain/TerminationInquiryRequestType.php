@@ -1,5 +1,7 @@
 <?php
 
+namespace Mastercard\services\Match\domain;
+
 class TerminationInquiryRequestType {
     private $acquirerId;
     private $transactionReferenceNumber;
