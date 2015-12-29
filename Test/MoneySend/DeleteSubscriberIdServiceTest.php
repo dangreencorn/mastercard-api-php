@@ -1,18 +1,21 @@
 <?php
 
-include_once dirname(__FILE__) . '/../../common/Environment.php';
-include_once dirname(__FILE__) . '/../TestUtils.php';
-include_once dirname(__FILE__) . '/../../services/MoneySend/services/DeleteSubscriberIdService.php';
-include_once dirname(__FILE__) . '/../../services/MoneySend/domain/DeleteSubscriberId.php';
-include_once dirname(__FILE__) . '/../../services/MoneySend/domain/DeleteSubscriberIdRequest.php';
+namespace Mastercard\Test\MoneySend;
 
-class CardMappingServiceTest extends \PHPUnit_Framework_TestCase {
+use \Mastercard\common\Environment;
+use \Mastercard\services\MoneySend\services\DeleteSubscriberIdService;
+use \Mastercard\services\MoneySend\domain\DeleteSubscriberId;
+use \Mastercard\services\MoneySend\domain\DeleteSubscriberIdRequest;
+use \Mastercard\common\CredentialsHelper;
+use \PHPUnit_Framework_TestCase;
+
+class DeleteCardMappingServiceTest extends PHPUnit_Framework_TestCase {
 
     private $cardMappingService;
 
     public function setUp() {
-        $testUtils = new TestUtils(Environment::SANDBOX);
-        $this->deleteSubscriberIdService = new DeleteSubscriberIdService(TestUtils::SANDBOX_CONSUMER_KEY, $testUtils->getPrivateKey(), Environment::SANDBOX);
+        $credentials = new CredentialsHelper(Environment::SANDBOX);
+        $this->deleteSubscriberIdService = new DeleteSubscriberIdService($credentials->getConsumerKey(), $credentials->getPrivateKey(), Environment::SANDBOX);
     }
 
     public function testDeleteSubscriberIdService() {

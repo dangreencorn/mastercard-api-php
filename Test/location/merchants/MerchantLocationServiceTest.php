@@ -1,23 +1,24 @@
 <?php
-require_once('../../../common/Environment.php');
-require_once('../../../services/location/merchants/MerchantLocationService.php');
-require_once('../../TestUtils.php');
-require_once('../../../services/location/domain/options/merchants/Details.php');
-require_once('../../../services/location/domain/options/merchants/MerchantLocationRequestOptions.php');
+namespace Mastercard\Test\location\merchants;
 
+use \Mastercard\common\Environment;
+use \Mastercard\services\location\merchants\MerchantLocationService;
+use \Mastercard\services\location\domain\options\merchants\Details;
+use \Mastercard\services\location\domain\options\merchants\MerchantLocationRequestOptions;
+use \Mastercard\common\CredentialsHelper;
+use \PHPUnit_Framework_TestCase;
 
-class MerchantLocationServiceTest extends \PHPUnit_Framework_TestCase {
+class MerchantLocationServiceTest extends PHPUnit_Framework_TestCase {
 
-    private $testUtils;
     private $service;
 
     public function setUp()
     {
-        $this->testUtils = new TestUtils(Environment::PRODUCTION);
+        $credentials = new CredentialsHelper(Environment::SANDBOX);
         $this->service = new MerchantLocationService(
-            TestUtils::LOCATION_PRODUCTION_CONSUMER_KEY,
-            $this->testUtils->getPrivateKey(),
-            Environment::PRODUCTION
+            $credentials->getConsumerKey(),
+            $credentials->getPrivateKey(),
+            Environment::SANDBOX
         );
     }
 

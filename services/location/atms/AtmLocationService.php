@@ -17,7 +17,7 @@ use \Mastercard\common\URLUtil;
 
 class AtmLocationService extends Connector{
 
-    private $environment;
+
 
     private $PRODUCTION_URL = "https://api.mastercard.com/atms/v1/atm?Format=XML";
     private $SANDBOX_URL = "https://sandbox.api.mastercard.com/atms/v1/atm?Format=XML";

@@ -14,17 +14,13 @@ class Connector
 	const TILDE = '~';
 	const COLON = ':';
 	const SPACE = ' ';
-			
-			
+
 	const UTF_8 = 'UTF-8';
 	const V1 = 'v1';
 	const OAUTH_START_STRING = 'OAuth ';
 	const REALM = 'realm';
 	const ACCEPT = 'Accept';
 	const CONTENT_TYPE = 'Content-Type';
-	
-	const SSL_CA_CER_PATH_LOCATION = '/SSLCerts/EnTrust/cacert.pem';
-	
 
 	const POST = "POST";
     const PUT = "PUT";
@@ -69,11 +65,12 @@ class Connector
 
 	public $signatureBaseString;
 	public $authHeader;
-	
+
 	protected $consumerKey;
 	private $privateKey;
-	public $keystorePath;
-	public $keystorePassword;
+
+	protected $environment;
+
 	private $version = '1.0';
 	private $signatureMethod = 'RSA-SHA1';
 
@@ -402,7 +399,8 @@ class Connector
 		$curl = curl_init($url);
 		
 		// Adds the CA cert bundle to authenticate the SSL cert
-		curl_setopt($curl, CURLOPT_CAINFO,  __DIR__ .Connector::SSL_CA_CER_PATH_LOCATION);  
+		$credentials = new CredentialsHelper($this->environment);
+		curl_setopt($curl, CURLOPT_CERTINFO,  $credentials->getCertificateFilePath());
 		
 		curl_setopt($curl,CURLOPT_RETURNTRANSFER,TRUE);
 		curl_setopt($curl,CURLOPT_SSL_VERIFYHOST,2);
@@ -429,13 +427,13 @@ class Connector
 		// Check if any error occurred
 		if(curl_errno($curl))
 		{
-			throw new Exception(sprintf(Connector::SSL_ERROR_MESSAGE,curl_errno($curl),PHP_EOL,curl_error($curl)),curl_errno($curl));
+			throw new \Exception(sprintf(Connector::SSL_ERROR_MESSAGE,curl_errno($curl),PHP_EOL,curl_error($curl)),curl_errno($curl));
 		}
 		
 		
 		// Check for errors and throw an exception
 		if($errorCode = curl_getinfo($curl,CURLINFO_HTTP_CODE) > 300){
-			throw new Exception($result,$errorCode);
+			throw new \Exception($result,$errorCode);
 		}
 		
 		return $result;

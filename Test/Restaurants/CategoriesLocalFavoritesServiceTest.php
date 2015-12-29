@@ -1,18 +1,21 @@
 <?php
-include_once dirname(__FILE__) . '/../../common/Environment.php';
-include_once dirname(__FILE__) . '/../../services/restaurants/services/CategoriesLocalFavoritesService.php';
-include_once dirname(__FILE__) . '/../../test/TestUtils.php';
+namespace Mastercard\Test\Restaurants;
 
-class CategoriesLocalFavoritesServiceTest extends \PHPUnit_Framework_TestCase {
-    private $testUtils;
+use \Mastercard\common\Environment;
+use \Mastercard\services\Restaurants\services\CategoriesLocalFavoritesService;
+use \Mastercard\common\CredentialsHelper;
+use \PHPUnit_Framework_TestCase;
+
+class CategoriesLocalFavoritesServiceTest extends PHPUnit_Framework_TestCase {
+    private $credentials;
     private $service;
 
     public function setUp()
     {
-        $this->testUtils = new TestUtils(Environment::SANDBOX);
+        $this->credentials = new CredentialsHelper(Environment::SANDBOX);
         $this->service = new CategoriesLocalFavoritesService(
-            TestUtils::SANDBOX_CONSUMER_KEY,
-            $this->testUtils->getPrivateKey(),
+            $this->credentials->getConsumerKey(),
+            $this->credentials->getPrivateKey(),
             Environment::SANDBOX
         );
     }

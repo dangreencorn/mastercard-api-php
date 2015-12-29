@@ -2,8 +2,10 @@
     "name": "dangreencorn/mastercard-api-php",
     "autoload": {
     	"psr-4": {
-    		"Mastercard\\": "./"
+    		"Mastercard\\": ""
         }
     },
-    "require": {}
+    "require": {
+        "phpunit/phpunit": "4.*"
+    }
 }

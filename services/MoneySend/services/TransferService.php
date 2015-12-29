@@ -5,15 +5,15 @@ namespace Mastercard\services\MoneySend\services;
 use \Mastercard\common\Connector;
 use \Mastercard\common\Environment;
 use \Mastercard\common\Serializer;
-use ..\domain\Transfer;
-use ..\domain\TransferRequest;
-use ..\domain\TransactionHistory;
-use ..\domain\Transaction;
-use ..\domain\Response;
-use ..\domain\PaymentRequest;
+use \Mastercard\services\MoneySend\domain\Transfer;
+use \Mastercard\services\MoneySend\domain\TransferRequest;
+use \Mastercard\services\MoneySend\domain\TransactionHistory;
+use \Mastercard\services\MoneySend\domain\Transaction;
+use \Mastercard\services\MoneySend\domain\Response;
+use \Mastercard\services\MoneySend\domain\PaymentRequest;
 
 class TransferService extends Connector {
-    private $environment;
+
     const SANDBOX_URL = "https://sandbox.api.mastercard.com/moneysend/v2/transfer?Format=XML";
     const PRODUCTION_URL = "https://api.mastercard.com/moneysend/v2/transfer?Format=XML";
     private $transferRequest;

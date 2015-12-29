@@ -2,9 +2,9 @@
 
 namespace Mastercard\services\Restaurants\services;
 
-use ..\domain\options\CountrySubdivisionsLocalFavoritesRequestOptions;
-use ..\domain\country_subdivisions\CountrySubdivisions;
-use ..\domain\country_subdivisions\CountrySubdivision;
+use \Mastercard\services\Restaurants\domain\options\CountrySubdivisionsLocalFavoritesRequestOptions;
+use \Mastercard\services\Restaurants\domain\countrySubdivisions\CountrySubdivisions;
+use \Mastercard\services\Restaurants\domain\countrySubdivisions\CountrySubdivision;
 use \Mastercard\common\Connector;
 use \Mastercard\common\Environment;
 use \Mastercard\common\Serializer;
@@ -12,7 +12,7 @@ use \Mastercard\common\URLUtil;
 
 class CountrySubdivisionsLocalFavoritesService extends Connector {
 
-    private $environment;
+
 
     private $SANDBOX_URL = 'https://sandbox.api.mastercard.com/restaurants/v1/countrysubdivision?Format=XML';
     private $PRODUCTION_URL = 'https://api.mastercard.com/restaurants/v1/countrysubdivision?Format=XML';

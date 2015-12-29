@@ -2,14 +2,14 @@
 
 namespace Mastercard\services\Restaurants\services;
 
-use ..\domain\options\RestaurantsLocalFavoritesRequestOptions;
-use ..\domain\restaurant\Address;
-use ..\domain\countries\Country;
-use ..\domain\country_subdivisions\CountrySubdivision;
-use ..\domain\restaurant\Location;
-use ..\domain\restaurant\Point;
-use ..\domain\restaurant\Restaurants;
-use ..\domain\restaurant\Restaurant;
+use \Mastercard\services\Restaurants\domain\options\RestaurantsLocalFavoritesRequestOptions;
+use \Mastercard\services\Restaurants\domain\restaurant\Address;
+use \Mastercard\services\Restaurants\domain\countries\Country;
+use \Mastercard\services\Restaurants\domain\countrySubdivisions\CountrySubdivision;
+use \Mastercard\services\Restaurants\domain\restaurant\Location;
+use \Mastercard\services\Restaurants\domain\restaurant\Point;
+use \Mastercard\services\Restaurants\domain\restaurant\Restaurants;
+use \Mastercard\services\Restaurants\domain\restaurant\Restaurant;
 use \Mastercard\common\Connector;
 use \Mastercard\common\Environment;
 use \Mastercard\common\Serializer;
@@ -17,7 +17,7 @@ use \Mastercard\common\URLUtil;
 
 class RestaurantsLocalFavoritesService extends Connector{
 
-    private $environment;
+
 
     private $SANDBOX_URL = 'https://sandbox.api.mastercard.com/restaurants/v1/restaurant?Format=XML';
     private $PRODUCTION_URL = 'https://api.mastercard.com/restaurants/v1/restaurant?Format=XML';

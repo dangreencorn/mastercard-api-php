@@ -5,9 +5,14 @@ namespace Mastercard\services\Repower\RepowerReversal;
 use \Mastercard\common\Connector;
 use \Mastercard\common\Environment;
 use \Mastercard\common\Serializer;
+use \Mastercard\services\Repower\RepowerReversal\domain\RepowerReversalRequest;
+use \Mastercard\services\Repower\RepowerReversal\domain\RepowerReversal;
+use \Mastercard\services\Repower\Repower\domain\TransactionHistory;
+use \Mastercard\services\Repower\Repower\domain\Transaction;
+use \Mastercard\services\Repower\Repower\domain\Response;
 
 class RepowerReversalService extends Connector{
-	private $environment;
+
 	const SANDBOX_URL = "https://sandbox.api.mastercard.com/repower/v1/repowerreversal?Format=XML";
 	const PRODUCTION_URL = "https://api.mastercard.com/repower/v1/repowerreversal?Format=XML";
 	

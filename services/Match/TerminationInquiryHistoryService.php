@@ -6,9 +6,19 @@ use \Mastercard\common\Connector;
 use \Mastercard\common\Environment;
 use \Mastercard\common\Serializer;
 use \Mastercard\common\URLUtil;
+use \Mastercard\services\Match\domain\TerminationInquiryType;
+use \Mastercard\services\Match\domain\TerminatedMerchantType;
+use \Mastercard\services\Match\domain\MerchantType;
+use \Mastercard\services\Match\domain\AddressType;
+use \Mastercard\services\Match\domain\PrincipalType;
+use \Mastercard\services\Match\domain\DriversLicenseType;
+use \Mastercard\services\Match\domain\MerchantMatchType;
+use \Mastercard\services\Match\domain\PrincipalMatchType;
+use \Mastercard\services\Match\domain\options\TerminationInquiryHistoryOptions;
+
 
 class TerminationInquiryHistoryService extends Connector {
-    private $environment;
+
     const SANDBOX_URL = "https://sandbox.api.mastercard.com/fraud/merchant/v1/termination-inquiry/%s?Format=XML";
     const PRODUCTION_URL = "https://api.mastercard.com/fraud/merchant/v1/termination-inquiry/%s?Format=XML";
 

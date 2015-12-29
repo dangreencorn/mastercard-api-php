@@ -1,19 +1,22 @@
 <?php
+namespace Mastercard\Test\Match;
 
-require_once '../../services/Match/TerminationInquiryService.php';
-require_once '../../services/Match/TerminationInquiryHistoryService.php';
-require_once '../../services/Match/domain/TerminationInquiryRequestType.php';
-require_once '../../services/Match/domain/MerchantType.php';
-require_once '../../services/Match/domain/AddressType.php';
-require_once '../../services/Match/domain/PrincipalType.php';
-require_once '../../services/Match/domain/DriversLicenseType.php';
-require_once '../../services/Match/domain/options/TerminationInquiryRequestOptions.php';
-require_once '../../services/Match/domain/options/TerminationInquiryHistoryOptions.php';
-require_once '../../services/Match/domain/TerminationInquiryType.php';
-require_once '../../services/Match/domain/TerminatedMerchantType.php';
-require_once '../../services/Match/domain/MerchantMatchType.php';
-require_once '../../services/Match/domain/PrincipalMatchType.php';
-require_once '../TestUtils.php';
+use \Mastercard\common\Environment;
+use \Mastercard\services\Match\TerminationInquiryService;
+use \Mastercard\services\Match\TerminationInquiryHistoryService;
+use \Mastercard\services\Match\domain\TerminationInquiryRequestType;
+use \Mastercard\services\Match\domain\MerchantType;
+use \Mastercard\services\Match\domain\AddressType;
+use \Mastercard\services\Match\domain\PrincipalType;
+use \Mastercard\services\Match\domain\DriversLicenseType;
+use \Mastercard\services\Match\domain\options\TerminationInquiryRequestOptions;
+use \Mastercard\services\Match\domain\options\TerminationInquiryHistoryOptions;
+use \Mastercard\services\Match\domain\TerminationInquiryType;
+use \Mastercard\services\Match\domain\TerminatedMerchantType;
+use \Mastercard\services\Match\domain\MerchantMatchType;
+use \Mastercard\services\Match\domain\PrincipalMatchType;
+use \Mastercard\common\CredentialsHelper;
+use \PHPUnit_Framework_TestCase;
 
 class TerminationInquiryServiceTest extends PHPUnit_Framework_TestCase {
     private $terminationInquiryService;
@@ -21,9 +24,9 @@ class TerminationInquiryServiceTest extends PHPUnit_Framework_TestCase {
     private $terminationInquiryRequest;
 
     public function setUp(){
-        $testUtils = new TestUtils(Environment::SANDBOX);
-        $this->terminationInquiryService = new TerminationInquiryService(TestUtils::SANDBOX_CONSUMER_KEY,$testUtils->getPrivateKey(),Environment::SANDBOX);
-        $this->terminationInquiryHistoryService = new TerminationInquiryHistoryService(TestUtils::SANDBOX_CONSUMER_KEY, $testUtils->getPrivateKey(), Environment::SANDBOX);
+        $credentials = new CredentialsHelper(Environment::SANDBOX);
+        $this->terminationInquiryService = new TerminationInquiryService($credentials->getConsumerKey(),$credentials->getPrivateKey(),Environment::SANDBOX);
+        $this->terminationInquiryHistoryService = new TerminationInquiryHistoryService($credentials->getConsumerKey(), $credentials->getPrivateKey(), Environment::SANDBOX);
 
         $this->terminationInquiryRequest = new TerminationInquiryRequestType();
         $this->terminationInquiryRequest->setMerchantType(new MerchantType());

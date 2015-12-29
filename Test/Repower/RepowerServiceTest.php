@@ -1,16 +1,21 @@
 <?php
+namespace Mastercard\Test\Repower;
 
-require_once '../../services/Repower/Repower/RepowerService.php';
-require_once '../../services/Repower/RepowerReversal/RepowerReversalService.php';
-require_once '../../services/Repower/Repower/domain/RepowerRequest.php';
-require_once '../../services/Repower/Repower/domain/Repower.php';
-require_once '../../services/Repower/Repower/domain/TransactionHistory.php';
-require_once '../../services/Repower/Repower/domain/Transaction.php';
-require_once '../../services/Repower/Repower/domain/Response.php';
-require_once '../../services/Repower/Repower/domain/AccountBalance.php';
-require_once '../../services/Repower/RepowerReversal/domain/RepowerReversal.php';
-require_once '../../services/Repower/RepowerReversal/domain/RepowerReversalRequest.php';
-include_once('../TestUtils.php');
+use \Mastercard\common\Environment;
+use \Mastercard\services\Repower\Repower\RepowerService;
+use \Mastercard\services\Repower\RepowerReversal\RepowerReversalService;
+use \Mastercard\services\Repower\Repower\domain\RepowerRequest;
+use \Mastercard\services\Repower\Repower\domain\Repower;
+use \Mastercard\services\Repower\Repower\domain\TransactionHistory;
+use \Mastercard\services\Repower\Repower\domain\Transaction;
+use \Mastercard\services\Repower\Repower\domain\TransactionAmount;
+use \Mastercard\services\Repower\Repower\domain\CardAcceptor;
+use \Mastercard\services\Repower\Repower\domain\Response;
+use \Mastercard\services\Repower\Repower\domain\AccountBalance;
+use \Mastercard\services\Repower\RepowerReversal\domain\RepowerReversal;
+use \Mastercard\services\Repower\RepowerReversal\domain\RepowerReversalRequest;
+use \Mastercard\common\CredentialsHelper;
+use \PHPUnit_Framework_TestCase;
 
 class RepowerServiceTest extends PHPUnit_Framework_TestCase
 {
@@ -21,9 +26,9 @@ class RepowerServiceTest extends PHPUnit_Framework_TestCase
 	
 	public function setUp()
 	{
-        $testUtils = new TestUtils(Environment::SANDBOX);
-        $this->repowerService = new RepowerService(TestUtils::SANDBOX_CONSUMER_KEY,$testUtils->getPrivateKey(),Environment::SANDBOX);
-		$this->repowerReversalService = new RepowerReversalService(TestUtils::SANDBOX_CONSUMER_KEY,$testUtils->getPrivateKey(),Environment::SANDBOX);
+        $credentials = new CredentialsHelper(Environment::SANDBOX);
+        $this->repowerService = new RepowerService($credentials->getConsumerKey(),$credentials->getPrivateKey(),Environment::SANDBOX);
+		$this->repowerReversalService = new RepowerReversalService($credentials->getConsumerKey(),$credentials->getPrivateKey(),Environment::SANDBOX);
         $this->repowerRequest = new RepowerRequest();
         $this->repowerReversalRequest = new RepowerReversalRequest();
         $this->repowerRequest->setTransactionAmount(new TransactionAmount());

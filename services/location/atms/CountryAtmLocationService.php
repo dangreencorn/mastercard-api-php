@@ -1,6 +1,6 @@
 <?php
 
-namespace Mastercard\services\atms;
+namespace Mastercard\services\location\atms;
 
 use \Mastercard\common\Connector;
 use \Mastercard\common\Environment;
@@ -10,7 +10,7 @@ use \Mastercard\services\location\domain\common\countries\Country;
 
 class CountryAtmLocationService extends Connector {
 
-    private $environment;
+
 
     private $PRODUCTION_URL = "https://api.mastercard.com/atms/v1/country?Format=XML";
     private $SANDBOX_URL = "https://sandbox.api.mastercard.com/atms/v1/country?Format=XML";

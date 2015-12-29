@@ -5,14 +5,16 @@ namespace Mastercard\services\MoneySend\services;
 use \Mastercard\common\Connector;
 use \Mastercard\common\Environment;
 use \Mastercard\common\Serializer;
-use ..\domain\SendingEligibility;
-use ..\domain\ReceivingEligibility;
-use ..\domain\Currency;
-use ..\domain\Brand;
-use ..\domain\Country;
+use \Mastercard\services\MoneySend\domain\SendingEligibility;
+use \Mastercard\services\MoneySend\domain\ReceivingEligibility;
+use \Mastercard\services\MoneySend\domain\Currency;
+use \Mastercard\services\MoneySend\domain\Brand;
+use \Mastercard\services\MoneySend\domain\Country;
+use \Mastercard\services\MoneySend\domain\PanEligibilityRequest;
+use \Mastercard\services\MoneySend\domain\PanEligibility;
 
 class PanEligibilityService extends Connector {
-    private $environment;
+
     const SANDBOX_URL = "https://sandbox.api.mastercard.com/moneysend/v2/eligibility/pan?Format=XML";
     const PRODUCTION_URL = "https://api.mastercard.com/moneysend/v2/eligibility/pan?Format=XML";
 

@@ -1,20 +1,22 @@
 <?php
+namespace Mastercard\Test\MoneySend;
 
-include_once dirname(__FILE__) . '/../../common/Environment.php';
-include_once dirname(__FILE__) . '/../TestUtils.php';
-include_once dirname(__FILE__) . '/../../services/MoneySend/services/PanEligibilityService.php';
-include_once dirname(__FILE__) . '/../../services/MoneySend/domain/PanEligibility.php';
-include_once dirname(__FILE__) . '/../../services/MoneySend/domain/PanEligibilityRequest.php';
+use \Mastercard\common\Environment;
+use \Mastercard\services\MoneySend\services\PanEligibilityService;
+use \Mastercard\services\MoneySend\domain\PanEligibility;
+use \Mastercard\services\MoneySend\domain\PanEligibilityRequest;
+use \Mastercard\common\CredentialsHelper;
+use \PHPUnit_Framework_TestCase;
 
-class PanEligibilityServiceTest extends \PHPUnit_Framework_TestCase {
+class PanEligibilityServiceTest extends PHPUnit_Framework_TestCase {
 
     private $panEligibilityService;
     private $panEligibilityRequest;
     private $panEligibility;
 
     public function setUp() {
-        $testUtils = new TestUtils(Environment::SANDBOX);
-        $this->panEligibilityService = new PanEligibilityService(TestUtils::SANDBOX_CONSUMER_KEY, $testUtils->getPrivateKey(), Environment::SANDBOX);
+        $credentials = new CredentialsHelper(Environment::SANDBOX);
+        $this->panEligibilityService = new PanEligibilityService($credentials->getConsumerKey(), $credentials->getPrivateKey(), Environment::SANDBOX);
     }
 
     public function testPanEligibilityService_NotEligible() {

@@ -2,15 +2,15 @@
 
 namespace Mastercard\services\Restaurants\services;
 
-use ..\domaincountries\Countries;
-use ..\domaincountries\Country;
+use \Mastercard\services\Restaurants\domain\countries\Countries;
+use \Mastercard\services\Restaurants\domain\countries\Country;
 use \Mastercard\common\Connector;
 use \Mastercard\common\Environment;
 use \Mastercard\common\Serializer;
 
 class CountriesLocalFavoritesService extends Connector {
 
-    private $environment;
+
 
     private $SANDBOX_URL = 'https://sandbox.api.mastercard.com/restaurants/v1/country?Format=XML';
     private $PRODUCTION_URL = 'https://api.mastercard.com/restaurants/v1/country?Format=XML';

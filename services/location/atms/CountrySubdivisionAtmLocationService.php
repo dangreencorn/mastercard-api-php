@@ -1,6 +1,6 @@
 <?php
 
-namespace Mastercard\services\atms;
+namespace Mastercard\services\location\atms;
 
 use \Mastercard\services\location\domain\options\atms\CountrySubdivisionAtmLocationRequestOptions;
 use \Mastercard\services\location\domain\common\countriesSubdivisions\CountrySubdivisions;
@@ -12,7 +12,7 @@ use \Mastercard\common\URLUtil;
 
 class CountrySubdivisionAtmLocationService extends Connector {
 
-    private $environment;
+
 
     private $PRODUCTION_URL = "https://api.mastercard.com/atms/v1/countrysubdivision?Format=XML";
     private $SANDBOX_URL = "https://sandbox.api.mastercard.com/atms/v1/countrysubdivision?Format=XML";

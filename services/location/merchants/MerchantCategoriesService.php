@@ -8,7 +8,7 @@ use \Mastercard\common\Environment;
 use \Mastercard\common\Serializer;
 
 class MerchantCategoriesService extends Connector {
-    private $environment;
+
 
     private $PRODUCTION_URL = "https://api.mastercard.com/merchants/v1/category?Format=XML";
     private $SANDBOX_URL = "https://sandbox.api.mastercard.com/merchants/v1/category?Format=XML";

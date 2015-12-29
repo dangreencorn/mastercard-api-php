@@ -5,9 +5,15 @@ namespace Mastercard\services\Repower\Repower;
 use \Mastercard\common\Connector;
 use \Mastercard\common\Environment;
 use \Mastercard\common\Serializer;
+use \Mastercard\services\Repower\Repower\domain\AccountBalance;
+use \Mastercard\services\Repower\Repower\domain\Repower;
+use \Mastercard\services\Repower\Repower\domain\RepowerRequest;
+use \Mastercard\services\Repower\Repower\domain\Response;
+use \Mastercard\services\Repower\Repower\domain\Transaction;
+use \Mastercard\services\Repower\Repower\domain\TransactionHistory;
 
 class RepowerService extends Connector{
-	private $environment;
+
     const SANDBOX_URL = "https://sandbox.api.mastercard.com/repower/v1/repower";
     const PRODUCTION_URL = "https://api.mastercard.com/repower/v1/repower";
 

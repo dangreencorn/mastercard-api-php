@@ -5,23 +5,24 @@ namespace Mastercard\services\MoneySend\services;
 use \Mastercard\common\Connector;
 use \Mastercard\common\Environment;
 use \Mastercard\common\Serializer;
-use ..\domain\Mapping;
-use ..\domain\CreateMapping;
-use ..\domain\CreateMappingRequest;
-use ..\domain\InquireMappingRequest;
-use ..\domain\InquireMapping;
-use ..\domain\Mappings;
-use ..\domain\Mapping;
-use ..\domain\ReceivingEligibility;
-use ..\domain\CardholderFullName;
-use ..\domain\Address;
-use ..\domain\Currency;
-use ..\domain\Country;
-use ..\domain\Brand;
-use ..\domain\UpdateMapping;
+use \Mastercard\services\MoneySend\domain\Mapping;
+use \Mastercard\services\MoneySend\domain\CreateMapping;
+use \Mastercard\services\MoneySend\domain\CreateMappingRequest;
+use \Mastercard\services\MoneySend\domain\InquireMappingRequest;
+use \Mastercard\services\MoneySend\domain\InquireMapping;
+use \Mastercard\services\MoneySend\domain\Mappings;
+use \Mastercard\services\MoneySend\domain\ReceivingEligibility;
+use \Mastercard\services\MoneySend\domain\CardholderFullName;
+use \Mastercard\services\MoneySend\domain\Address;
+use \Mastercard\services\MoneySend\domain\Currency;
+use \Mastercard\services\MoneySend\domain\Country;
+use \Mastercard\services\MoneySend\domain\Brand;
+use \Mastercard\services\MoneySend\domain\UpdateMapping;
+use \Mastercard\services\MoneySend\domain\options\UpdateMappingRequestOptions;
+use \Mastercard\services\MoneySend\domain\options\DeleteMappingRequestOptions;
 
 class CardMappingService extends Connector {
-    private $environment;
+
     const SANDBOX_URL = "https://sandbox.api.mastercard.com/moneysend/v2/mapping/card?Format=XML";
     const PRODUCTION_URL = "https://api.mastercard.com/moneysend/v2/mapping/card?Format=XML";
 

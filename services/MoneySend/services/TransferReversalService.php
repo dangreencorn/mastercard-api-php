@@ -5,14 +5,14 @@ namespace Mastercard\services\MoneySend\services;
 use \Mastercard\common\Connector;
 use \Mastercard\common\Environment;
 use \Mastercard\common\Serializer;
-use ..\domain\TransferReversal;
-use ..\domain\TransferReversalRequest;
-use ..\domain\TransactionHistory;
-use ..\domain\Transaction;
-use ..\domain\Response;
+use \Mastercard\services\MoneySend\domain\TransferReversal;
+use \Mastercard\services\MoneySend\domain\TransferReversalRequest;
+use \Mastercard\services\MoneySend\domain\TransactionHistory;
+use \Mastercard\services\MoneySend\domain\Transaction;
+use \Mastercard\services\MoneySend\domain\Response;
 
 class TransferReversalService extends Connector {
-    private $environment;
+
     const SANDBOX_URL = "https://sandbox.api.mastercard.com/moneysend/v2/transferreversal?Format=XML";
     const PRODUCTION_URL = "https://api.mastercard.com/moneysend/v2/transferreversal?Format=XML";
     private $transferReversalRequest;

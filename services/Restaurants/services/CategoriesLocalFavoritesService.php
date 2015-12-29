@@ -2,13 +2,13 @@
 
 namespace Mastercard\services\Restaurants\services;
 
-use ..\domain\categories\Categories;
+use \Mastercard\services\Restaurants\domain\categories\Categories;
 use \Mastercard\common\Connector;
 use \Mastercard\common\Environment;
 use \Mastercard\common\Serializer;
 
 class CategoriesLocalFavoritesService extends Connector {
-    private $environment;
+
 
     private $SANDBOX_URL = 'https://sandbox.api.mastercard.com/restaurants/v1/category?Format=XML';
     private $PRODUCTION_URL = 'https://api.mastercard.com/restaurants/v1/category?Format=XML';

@@ -1,20 +1,22 @@
 <?php
+namespace Mastercard\Test\MoneySend;
 
-include_once dirname(__FILE__) . '/../../common/Environment.php';
-include_once dirname(__FILE__) . '/../TestUtils.php';
-include_once dirname(__FILE__) . '/../../services/MoneySend/services/TransferReversalService.php';
-include_once dirname(__FILE__) . '/../../services/MoneySend/domain/TransferReversal.php';
-include_once dirname(__FILE__) . '/../../services/MoneySend/domain/TransferReversalRequest.php';
+use \Mastercard\common\Environment;
+use \Mastercard\services\MoneySend\services\TransferReversalService;
+use \Mastercard\services\MoneySend\domain\TransferReversal;
+use \Mastercard\services\MoneySend\domain\TransferReversalRequest;
+use \Mastercard\common\CredentialsHelper;
+use \PHPUnit_Framework_TestCase;
 
-class TransferReversalServiceTest extends \PHPUnit_Framework_TestCase {
+class TransferReversalServiceTest extends PHPUnit_Framework_TestCase {
 
     private $transferReversalService;
     private $transferReversalRequest;
     private $transferReversal;
 
     public function setUp() {
-        $testUtils = new TestUtils(Environment::SANDBOX);
-        $this->transferReversalService = new TransferReversalService(TestUtils::SANDBOX_CONSUMER_KEY, $testUtils->getPrivateKey(), Environment::SANDBOX);
+        $credentials = new CredentialsHelper(Environment::SANDBOX);
+        $this->transferReversalService = new TransferReversalService($credentials->getConsumerKey(), $credentials->getPrivateKey(), Environment::SANDBOX);
     }
 
     public function testTransferReversalService() {

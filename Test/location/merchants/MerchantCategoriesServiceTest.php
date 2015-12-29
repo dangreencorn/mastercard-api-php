@@ -1,18 +1,21 @@
 <?php
-require_once('../../../common/Environment.php');
-require_once('../../../services/location/merchants/MerchantCategoriesService.php');
-require_once('../../TestUtils.php');
+namespace Mastercard\Test\location\merchants;
 
-class MerchantCategoriesServiceTest extends \PHPUnit_Framework_TestCase {
-    private $testUtils;
+use \Mastercard\common\Environment;
+use \Mastercard\services\location\merchants\MerchantCategoriesService;
+use \Mastercard\common\CredentialsHelper;
+use \PHPUnit_Framework_TestCase;
+
+class MerchantCategoriesServiceTest extends PHPUnit_Framework_TestCase {
+
     private $service;
 
     public function setUp()
     {
-        $this->testUtils = new TestUtils(Environment::SANDBOX);
+        $credentials = new CredentialsHelper(Environment::SANDBOX);
         $this->service = new MerchantCategoriesService(
-            TestUtils::SANDBOX_CONSUMER_KEY,
-            $this->testUtils->getPrivateKey(),
+            $credentials->getConsumerKey(),
+            $credentials->getPrivateKey(),
             Environment::SANDBOX
         );
     }

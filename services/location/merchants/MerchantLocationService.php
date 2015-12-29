@@ -19,7 +19,7 @@ use \Mastercard\common\URLUtil;
 
 class MerchantLocationService extends Connector {
 
-    private $environment;
+
 
     private $PRODUCTION_URL = "https://api.mastercard.com/merchants/v1/merchant?Format=XML";
     private $SANDBOX_URL = "https://sandbox.api.mastercard.com/merchants/v1/merchant?Format=XML";

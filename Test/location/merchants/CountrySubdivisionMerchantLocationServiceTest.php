@@ -1,22 +1,24 @@
 <?php
-require_once('../../../common/Environment.php');
-require_once('../../../services/location/merchants/CountrySubdivisionMerchantLocationService.php');
-require_once('../../TestUtils.php');
-require_once('../../../services/location/domain/options/merchants/Details.php');
-require_once('../../../services/location/domain/options/merchants/CountrySubdivisionMerchantLocationRequestOptions.php');
+namespace Mastercard\Test\location\merchants;
+
+use \Mastercard\common\Environment;
+use \Mastercard\services\location\merchants\CountrySubdivisionMerchantLocationService;
+use \Mastercard\services\location\domain\options\merchants\Details;
+use \Mastercard\services\location\domain\options\merchants\CountrySubdivisionMerchantLocationRequestOptions;
+use \Mastercard\common\CredentialsHelper;
+use \PHPUnit_Framework_TestCase;
 
 
-class CountrySubdivisionMerchantLocationServiceTest extends \PHPUnit_Framework_TestCase {
+class CountrySubdivisionMerchantLocationServiceTest extends PHPUnit_Framework_TestCase {
 
-    private $testUtils;
     private $service;
 
     public function setUp()
     {
-        $this->testUtils = new TestUtils(Environment::SANDBOX);
+        $credentials = new CredentialsHelper(Environment::SANDBOX);
         $this->service = new CountrySubdivisionMerchantLocationService(
-            TestUtils::SANDBOX_CONSUMER_KEY,
-            $this->testUtils->getPrivateKey(),
+            $credentials->getConsumerKey(),
+            $credentials->getPrivateKey(),
             Environment::SANDBOX
         );
     }

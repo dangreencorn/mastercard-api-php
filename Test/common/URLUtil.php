@@ -1,6 +1,8 @@
 <?php
+namespace Mastercard\Test\common;
 
-require_once('../../common/URLUtil.php');
+use \Mastercard\common\URLUtil;
+use \PHPUnit_Framework_TestCase;
 
 class Test extends PHPUnit_Framework_TestCase {
 

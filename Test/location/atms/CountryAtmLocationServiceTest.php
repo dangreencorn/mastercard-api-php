@@ -1,20 +1,21 @@
 <?php
-require_once('../../../common/Environment.php');
-require_once('../../../services/location/atms/CountryAtmLocationService.php');
-require_once('../../TestUtils.php');
+namespace Mastercard\Test\location\atms;
 
+use \Mastercard\common\Environment;
+use \Mastercard\services\location\atms\CountryAtmLocationService;
+use \Mastercard\common\CredentialsHelper;
+use \PHPUnit_Framework_TestCase;
 
-class CountryAtmLocationServiceTest extends \PHPUnit_Framework_TestCase {
+class CountryAtmLocationServiceTest extends PHPUnit_Framework_TestCase {
 
-    private $testUtils;
     private $service;
 
     public function setUp()
     {
-        $this->testUtils = new TestUtils(Environment::SANDBOX);
+        $credentials = new CredentialsHelper(Environment::SANDBOX);
         $this->service = new CountryAtmLocationService(
-            TestUtils::SANDBOX_CONSUMER_KEY,
-            $this->testUtils->getPrivateKey(),
+            $credentials->getConsumerKey(),
+            $credentials->getPrivateKey(),
             Environment::SANDBOX
         );
     }

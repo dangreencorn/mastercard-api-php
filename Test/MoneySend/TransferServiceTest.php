@@ -1,21 +1,24 @@
 <?php
+namespace Mastercard\Test\MoneySend;
 
-include_once dirname(__FILE__) . '/../../common/Environment.php';
-include_once dirname(__FILE__) . '/../TestUtils.php';
-include_once dirname(__FILE__) . '/../../services/MoneySend/services/TransferService.php';
-include_once dirname(__FILE__) . '/../../services/MoneySend/domain/Transfer.php';
-include_once dirname(__FILE__) . '/../../services/MoneySend/domain/TransferRequest.php';
-include_once dirname(__FILE__) . '/../../services/MoneySend/domain/FundingCard.php';
-include_once dirname(__FILE__) . '/../../services/MoneySend/domain/FundingMapped.php';
-include_once dirname(__FILE__) . '/../../services/MoneySend/domain/FundingAmount.php';
-include_once dirname(__FILE__) . '/../../services/MoneySend/domain/ReceiverAddress.php';
-include_once dirname(__FILE__) . '/../../services/MoneySend/domain/SenderAddress.php';
-include_once dirname(__FILE__) . '/../../services/MoneySend/domain/ReceivingCard.php';
-include_once dirname(__FILE__) . '/../../services/MoneySend/domain/ReceivingMapped.php';
-include_once dirname(__FILE__) . '/../../services/MoneySend/domain/ReceivingAmount.php';
-include_once dirname(__FILE__) . '/../../services/MoneySend/domain/CardAcceptor.php';
+use \Mastercard\common\Environment;
+use \Mastercard\services\MoneySend\services\TransferService;
+use \Mastercard\services\MoneySend\domain\Transfer;
+use \Mastercard\services\MoneySend\domain\TransferRequest;
+use \Mastercard\services\MoneySend\domain\FundingCard;
+use \Mastercard\services\MoneySend\domain\FundingMapped;
+use \Mastercard\services\MoneySend\domain\FundingAmount;
+use \Mastercard\services\MoneySend\domain\PaymentRequest;
+use \Mastercard\services\MoneySend\domain\ReceiverAddress;
+use \Mastercard\services\MoneySend\domain\SenderAddress;
+use \Mastercard\services\MoneySend\domain\ReceivingCard;
+use \Mastercard\services\MoneySend\domain\ReceivingMapped;
+use \Mastercard\services\MoneySend\domain\ReceivingAmount;
+use \Mastercard\services\MoneySend\domain\CardAcceptor;
+use \Mastercard\common\CredentialsHelper;
+use \PHPUnit_Framework_TestCase;
 
-class TransferServiceTest extends \PHPUnit_Framework_TestCase {
+class TransferServiceTest extends PHPUnit_Framework_TestCase {
 
     private $transferService;
     private $transferRequestCard;
@@ -25,8 +28,8 @@ class TransferServiceTest extends \PHPUnit_Framework_TestCase {
     private $transfer;
 
     public function setUp() {
-        $testUtils = new TestUtils(Environment::SANDBOX);
-        $this->transferService = new TransferService(TestUtils::SANDBOX_CONSUMER_KEY, $testUtils->getPrivateKey(), Environment::SANDBOX);
+        $credentials = new CredentialsHelper(Environment::SANDBOX);
+        $this->transferService = new TransferService($credentials->getConsumerKey(), $credentials->getPrivateKey(), Environment::SANDBOX);
     }
 
 

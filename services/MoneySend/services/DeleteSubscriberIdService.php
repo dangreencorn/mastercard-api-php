@@ -5,11 +5,11 @@ namespace Mastercard\services\MoneySend\services;
 use \Mastercard\common\Connector;
 use \Mastercard\common\Environment;
 use \Mastercard\common\Serializer;
-use ..\domain\DeleteSubscriberId;
-use ..\domain\DeleteSubscriberIdRequest;
+use \Mastercard\services\MoneySend\domain\DeleteSubscriberId;
+use \Mastercard\services\MoneySend\domain\DeleteSubscriberIdRequest;
 
 class DeleteSubscriberIdService extends Connector {
-    private $environment;
+
     const SANDBOX_URL = "https://sandbox.api.mastercard.com/moneysend/v2/mapping/subscriber?Format=XML";
     const PRODUCTION_URL = "https://api.mastercard.com/moneysend/v2/mapping/subscriber?Format=XML";
 
